@@ -67,19 +67,24 @@
 	
 	<!-- TEMPLATE STYLES -->
 	<div id="template-styles">
-		<h2>Template Styles <a href="#"><img class="s-s-icon" src="{% static 'images/settings.png' %}" alt="Style switcher" /></a></h2>
+		<h2> <a href="#"><img class="s-s-icon" src="{% static 'images/settings.png' %}" alt="Style switcher" /></a></h2>
 		<div>
-		<h3>Colors</h3>
-			<ul class="colors" >
-				<li><a href="#" class="yellow" title="yellow"></a></li>
-				<li><a href="#" class="orange" title="orange"></a></li>
-				<li><a href="#" class="strawberry" title="strawberry"></a></li>
-				<li><a href="#" class="pink" title="pink"></a></li>
-				<li><a href="#" class="purple" title="purple"></a></li>
-				<li><a href="#" class="blue" title="blue"></a></li>
-				<li><a href="#" class="turqoise" title="turqoise"></a></li>
-				<li><a href="#" class="black" title="black"></a></li>
-			</ul>
+		<h3>Язык</h3>
+		<ul class="profile-nav">
+		</ul>
+		<ul class="lang-nav">
+			<li class="active"><a href="#" title="English (US)">English (US)</a></li>
+			<li><a href="#" title="English (UK)">English (UK)</a></li>
+			<li><a href="#" title="Deutsch">Deutsch</a></li>
+			<li><a href="#" title="Italiano">Italiano</a></li>
+			<li><a href="#" title="Русский">Русский</a></li>
+		</ul>
+		<h3>Валюта</h3>
+		<ul class="currency-nav">
+			<li class="active"><a href="#" title="$US Dollar">$US Dollar</a></li>
+			<li><a href="#" title="€ Euro">€ Euro</a></li>
+			<li><a href="#" title="£ Pound">£ Pound</a></li>
+		</ul>
 		</div>
 	</div>
 	<script src="{% static 'js/styler.js' %}"></script>
