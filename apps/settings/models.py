@@ -4,6 +4,7 @@ from django.db import models
 class Setting(models.Model):
     title = models.CharField(max_length=100, verbose_name="Название сайта")
     description = models.TextField(verbose_name="Описание сайта")
+    address = models.CharField(max_length=170)
     logo = models.ImageField(upload_to = 'logo/', verbose_name="Логотип сайта")
     second_logo= models.ImageField(upload_to= 'second_logo/', verbose_name="second logo")
     phone = models.CharField(max_length=255, verbose_name="Телефонный номер")

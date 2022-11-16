@@ -5,7 +5,10 @@ class Hotels(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField(upload_to= "cruises_image/")
+    place = models.CharField(max_length=255)
+    best = models.BooleanField(default=False)
     price = models.IntegerField()
+    airplane_prices = models.BigIntegerField()
 
     def __str__(self):
         return self.title
