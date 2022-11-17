@@ -11,17 +11,24 @@
 			<div class="ribbon">
 				<nav>	
 					<ul class="profile-nav">
-						<li class="active"><a href="#" title="My Account">My Account</a></li>
-						<li><a href="login.html" title="Login">Login</a></li>
-						<li><a href="my_account.html" title="Settings">Settings</a></li>
+						{% if user.is_authenticated %}
+						<li class="active"><a href="#" title="My Account">{{ user.username }}</a></li>
+						{% else %}
+						<li class="active"><a href="#" title="My Account">Профиль</a></li>
+						{% endif %}
+						
 					</ul>
+					{% if user.is_authenticated %}
 					<ul class="lang-nav">
 						<li class="active"><a href="#" title="English (US)">Login</a></li>
 					
 					</ul>
 					<ul class="currency-nav">
-						<li class="active"><a href="#" title="$US Dollar">Register</a></li>
+						<li class="active"><a href="{% url 'register' %}" title="$US Dollar">Register</a></li>
 					</ul>
+					{% else %}
+
+					{% endif %}
 				</nav>
 			</div>
 			<!--//ribbon-->
