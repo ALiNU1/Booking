@@ -3,7 +3,7 @@
 	<header class="header">
 		<div class="wrap">
 			<!--logo-->
-			<div class="logo"><a href="index.html" title="Book Your Travel"><img src="{% static 'images/txt/logo.png' %}" alt="Book Your Travel" /></a></div>
+			<div class="logo"><a href="{% url 'index' %}" title="Book Your Travel"><img src="{% static 'images/txt/logo.png' %}" alt="Book Your Travel" /></a></div>
 			<!--//logo-->
 		
 			
@@ -35,7 +35,8 @@
 			
 			<!--search-->
 			<div class="search">
-				<form id="search-form" method="get" action="search-form">
+				<form id="search-form" method="get" action="{% url 'search' %}">
+					{% csrf_token %}
 					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
 					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
 				</form>
@@ -59,7 +60,7 @@
 					<li><a href="flights.html" title="Flights">Рейсы</a></li>
 					<li><a href="cruises.html" title="Cruises">Круизы</a></li>
 					<li><a href="car_rentals.html" title="Car rental">Прокат машин</a></li>
-					<li><a href="hot_deals.html" title="Hot deals">Горячее предложение</a></li>
+					<li><a href="{% url 'search' %}" title="Hot deals">Горячее предложение</a></li>
 					<li><a href="contact.html" title="Contact">Связаться</a></li>
 					<li><a href="blog.html" title="Blog">Новости</a>
 						<ul>
