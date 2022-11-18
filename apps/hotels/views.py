@@ -28,3 +28,13 @@ def hotel_search(request):
         
     }
     return render(request,"booking/search_results.html", context)
+
+def all_hotels(request):
+    setting = Setting.objects.latest('id')
+    hotels = Hotels.objects.all()
+
+    context = {
+        'setting' : setting,
+        'hotels' : hotels,
+    }
+    return render(request,'booking/hotels.html', context)

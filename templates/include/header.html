@@ -12,7 +12,7 @@
 				<nav>	
 					<ul class="profile-nav">
 						{% if user.is_authenticated %}
-						<li class="active"><a href="#" title="My Account">{{ user.username }}</a></li>
+						<li class="active"><a href="{% url 'profile' %}" title="My Account">{{ user.username }}</a></li>
 						{% else %}
 						<li class="active"><a href="#" title="My Account">Профиль</a></li>
 						{% endif %}
@@ -20,7 +20,7 @@
 					</ul>
 					{% if user.is_authenticated %}
 					<ul class="lang-nav">
-						<li class="active"><a href="#" title="English (US)">Login</a></li>
+						<li class="active"><a href="{% url 'login' %}" title="English (US)">Login</a></li>
 					
 					</ul>
 					<ul class="currency-nav">
@@ -38,7 +38,7 @@
 				<form id="search-form" method="get" action="{% url 'search' %}">
 					{% csrf_token %}
 					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
-					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
+					<button type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"></button>
 				</form>
 			</div>
 			<!--//search-->
@@ -55,7 +55,7 @@
 		<nav class="main-nav">
 			<div class="wrap">
 				<ul class="slimmenu" id="nav">
-					<li><a href="hotels.html" title="Hotels">Отели</a>
+					<li><a href="{% url 'all_hotels' %}" title="Hotels">Отели</a>
 					</li>
 					<li><a href="flights.html" title="Flights">Рейсы</a></li>
 					<li><a href="cruises.html" title="Cruises">Круизы</a></li>
