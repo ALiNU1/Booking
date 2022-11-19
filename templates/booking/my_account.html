@@ -31,59 +31,72 @@
 							<table>
 								<tr>
 									<th>Имя:</th>
-									<td>{{user.first_name}}
+									<td>{{ user.first_name }}
 										<!--edit fields-->
 										<div class="edit_field" id="field1">
-											<label for="new_name">Your new name:</label>
+											<label for="new_name">Новое имя :</label>
 											<input type="text" id="new_name"/>
-											<input type="submit" value="save" class="gradient-button" id="submit1"/>
-											<a href="#">Cancel</a>
+											<input type="submit" value="Сохранить" class="gradient-button" id="submit1"/>
+											<a href="#">Отменить</a>
 										</div>
 										<!--//edit fields-->
 									</td>
-									<td><a href="#field1" class="gradient-button edit">Edit</a></td>
+									<td><a href="#field1" class="gradient-button edit">Изменить</a></td>
 								</tr>
 								<tr>
-									<th>Last name:</th>
-									<td>Livingston
+									<th>Фамилия:</th>
+									<td>{{ user.last_name }}
 										<!--edit fields-->
 										<div class="edit_field" id="field2">
-											<label for="new_last_name">Новое имя:</label>
+											<label for="new_last_name">Новая фамилия:</label>
 											<input type="text" id="new_last_name"/>
-											<input type="submit" value="save" class="gradient-button" id="submit2"/>
-											<a href="#">Cancel</a>
+											<input type="submit" value="Сохранить" class="gradient-button" id="submit2"/>
+											<a href="#">Отменить</a>
 										</div>
 										<!--//edit fields-->
 									</td>
-									<td><a href="#field2" class="gradient-button edit">Edit</a></td>
+									<td><a href="#field2" class="gradient-button edit">Изменить</a></td>
 								</tr>
 								<tr>
-									<th>E-mail address: </th>
-									<td>mail@google.com
+									<th>E-mail: </th>
+									<td>{{ user.email }}
 										<!--edit fields-->
 										<div class="edit_field" id="field3">
-											<label for="new_email">Your new email:</label>
+											<label for="new_email">Новый email:</label>
 											<input type="text" id="new_email"/>
-											<input type="submit" value="save" class="gradient-button" id="submit3"/>
-											<a href="#">Cancel</a>
+											<input type="submit" value="Сохранить" class="gradient-button" id="submit3"/>
+											<a href="#">Отменить</a>
 										</div>
 										<!--//edit fields-->
 									</td>
-									<td><a href="#field3" class="gradient-button edit">Edit</a></td>
+									<td><a href="#field3" class="gradient-button edit">Изменить</a></td>
 								</tr>
 								<tr>
-									<th>Password: </th>
+									<th>Пароль: </th>
+									{% if user.request == user %}
 									<td>*********
 										<!--edit fields-->
 										<div class="edit_field" id="field4">
-											<label for="new_password">Your new password:</label>
+											<label for="new_password">Новый пароль:</label>
 											<input type="password" id="new_password"/>
-											<input type="submit" value="save" class="gradient-button" id="submit4"/>
-											<a href="#">Cancel</a>
+											<input type="submit" value="Сохранить" class="gradient-button" id="submit4"/>
+											<a href="#">Отменить</a>
 										</div>
 										<!--//edit fields-->
 									</td>
-									<td><a href="#field4" class="gradient-button edit">Edit</a></td>
+									{% else %}
+									<td>*********
+										<!--edit fields-->
+										<div class="edit_field" id="field4">
+											<label for="new_password">Новый пароль:</label>
+											<input type="password" id="new_password"/>
+											<input type="submit" value="Сохранить" class="gradient-button" id="submit4"/>
+											<a href="#">Отменить</a>
+										</div>
+										<!--//edit fields-->
+									</td>
+									{% endif %}
+									<td><a href="#field4" class="gradient-button edit">Изменить</a></td>
 								</tr>
 							</table>
 						</article>
@@ -105,13 +118,13 @@
 					
 					<!--Why Book with us?-->
 					<article class="widget">
-						<h4>Why Book with us?</h4>
-						<h5>Low rates</h5>
-						<p>Get the best rates, or get a refund.<br>No booking fees. Save money!</p>
-						<h5>Largest Selection</h5>
-						<p>140,000+ hotels worldwide<br>130+ airlines<br>Over 3 million guest reviews</p>
-						<h5>We’re Always Here</h5>
-						<p>Call or email us, anytime<br>Get 24-hour support before, during, and after your trip</p>
+						<h4>Зачем бронировать у нас?</h4>
+						<h5>Низкие темпы</h5>
+						<p>Получите лучшие цены или получите возмещение. Никаких комиссий за бронирование. Экономить деньги!</p>
+						<h5>Самый большой выбор</h5>
+						<p>Более 140 000 отелей по всему миру 130+ авиакомпаний Более 3 миллионов отзывов гостей</p>
+						<h5>Мы всегда здесь</h5>
+						<p>Позвоните или напишите нам в любое время. Получите круглосуточную поддержку до, во время и после поездки.</p>
 					</article>
 					<!--//Why Book with us?-->
 					

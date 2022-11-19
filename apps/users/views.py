@@ -32,10 +32,9 @@ def register(request):
     }
     return render(request, 'booking/register.html', context)
 
-def profile(request):
+def profile(request,id):
     setting = Setting.objects.latest('id')
-    user = User.objects.all()
-
+    user = User.objects.get(id=id)
     context = {
         'setting' : setting,
         'user' : user,

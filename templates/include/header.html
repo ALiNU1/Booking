@@ -12,22 +12,26 @@
 				<nav>	
 					<ul class="profile-nav">
 						{% if user.is_authenticated %}
-						<li class="active"><a href="{% url 'profile' %}" title="My Account">{{ user.username }}</a></li>
+						<li class="active"><a href="{% url 'profile' user.id %}" title="My Account">{{ user.username }}</a></li>
 						{% else %}
-						<li class="active"><a href="#" title="My Account">Профиль</a></li>
+						
 						{% endif %}
 						
 					</ul>
 					{% if user.is_authenticated %}
+					<ul class="currency-nav">
+						<li class="active"><a href="{% url 'logout' %}" title="$US Dollar">LogOut</a></li>
+					</ul>
+					<ul>
+					<li class="active"><a href="{% url 'profile' user.id %}" title="My Account">Профиль</a></li>
+					</ul>
+					{% else %}
 					<ul class="lang-nav">
 						<li class="active"><a href="{% url 'login' %}" title="English (US)">Login</a></li>
-					
 					</ul>
 					<ul class="currency-nav">
 						<li class="active"><a href="{% url 'register' %}" title="$US Dollar">Register</a></li>
 					</ul>
-					{% else %}
-
 					{% endif %}
 				</nav>
 			</div>

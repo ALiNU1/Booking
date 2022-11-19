@@ -7,6 +7,7 @@ class Hotels(models.Model):
     image = models.ImageField(upload_to= "cruises_image/")
     place = models.CharField(max_length=255)
     best = models.BooleanField(default=False)
+    sale = models.IntegerField()
     price = models.IntegerField()
     airplane_prices = models.BigIntegerField()
 
