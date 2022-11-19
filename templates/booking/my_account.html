@@ -30,15 +30,31 @@
 							<h2>Персональные данные</h2>
 							<table>
 								<tr>
+									<th>Имя пользователя:</th>
+									<td>{{ user.username }}
+										<!--edit fields-->
+										<form class="edit_field" id="field2" method="POST">
+											{% csrf_token %}
+											<label for="new_last_name">Новый никнейм:</label>
+											<input type="text" name="username" id="new_last_name"/>
+											<button type="submit" name="username1" class="gradient-button" id="submit2"></button>
+											<a href="#">Отменить</a>
+										</form>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field2" class="gradient-button edit">Изменить</a></td>
+								</tr>
+								<tr>
 									<th>Имя:</th>
 									<td>{{ user.first_name }}
 										<!--edit fields-->
-										<div class="edit_field" id="field1">
+										<form class="edit_field" id="field1" method="POST">
+											{% csrf_token %}
 											<label for="new_name">Новое имя :</label>
-											<input type="text" id="new_name"/>
-											<input type="submit" value="Сохранить" class="gradient-button" id="submit1"/>
+											<input type="text" name="first_name" id="new_name"/>
+											<button type="submit" name="first_name1" class="gradient-button" id="submit1"></button>
 											<a href="#">Отменить</a>
-										</div>
+										</form>
 										<!--//edit fields-->
 									</td>
 									<td><a href="#field1" class="gradient-button edit">Изменить</a></td>
@@ -47,12 +63,28 @@
 									<th>Фамилия:</th>
 									<td>{{ user.last_name }}
 										<!--edit fields-->
-										<div class="edit_field" id="field2">
+										<form class="edit_field" id="field2" method="POST">
+											{% csrf_token %}
 											<label for="new_last_name">Новая фамилия:</label>
-											<input type="text" id="new_last_name"/>
-											<input type="submit" value="Сохранить" class="gradient-button" id="submit2"/>
+											<input type="text" name="last_name" id="new_last_name"/>
+											<button type="submit" name="last_name1" class="gradient-button" id="submit2"></button>
 											<a href="#">Отменить</a>
-										</div>
+										</form>
+										<!--//edit fields-->
+									</td>
+									<td><a href="" class="gradient-button edit">Изменить</a></td>
+								</tr>
+								<tr>
+									<th>Номер:</th>
+									<td>{{ user.phone }}
+										<!--edit fields-->
+										<form class="edit_field" id="field2" method="POST">
+											{% csrf_token %}
+											<label for="new_last_name">Новый номер:</label>
+											<input type="text" name="phone" id="new_last_name"/>
+											<button type="submit" name="phone1" class="gradient-button" id="submit2"></button>
+											<a href="#">Отменить</a>
+										</form>
 										<!--//edit fields-->
 									</td>
 									<td><a href="#field2" class="gradient-button edit">Изменить</a></td>
@@ -61,41 +93,29 @@
 									<th>E-mail: </th>
 									<td>{{ user.email }}
 										<!--edit fields-->
-										<div class="edit_field" id="field3">
+										<form class="edit_field" id="field3" method="POST">
+											{% csrf_token %}
 											<label for="new_email">Новый email:</label>
-											<input type="text" id="new_email"/>
-											<input type="submit" value="Сохранить" class="gradient-button" id="submit3"/>
+											<input type="text" name="email" id="new_email"/>
+											<button type="submit" name="email1" class="gradient-button" id="submit3"></button>/>
 											<a href="#">Отменить</a>
-										</div>
+										</form>
 										<!--//edit fields-->
 									</td>
 									<td><a href="#field3" class="gradient-button edit">Изменить</a></td>
 								</tr>
 								<tr>
 									<th>Пароль: </th>
-									{% if user.request == user %}
 									<td>*********
 										<!--edit fields-->
-										<div class="edit_field" id="field4">
+										<form class="edit_field" id="field4" method="POST">
 											<label for="new_password">Новый пароль:</label>
-											<input type="password" id="new_password"/>
-											<input type="submit" value="Сохранить" class="gradient-button" id="submit4"/>
+											<input type="password" name="password" id="new_password"/>
+											<button type="submit" name="password1" class="gradient-button" id="submit4"></button>
 											<a href="#">Отменить</a>
-										</div>
+										</form>
 										<!--//edit fields-->
 									</td>
-									{% else %}
-									<td>*********
-										<!--edit fields-->
-										<div class="edit_field" id="field4">
-											<label for="new_password">Новый пароль:</label>
-											<input type="password" id="new_password"/>
-											<input type="submit" value="Сохранить" class="gradient-button" id="submit4"/>
-											<a href="#">Отменить</a>
-										</div>
-										<!--//edit fields-->
-									</td>
-									{% endif %}
 									<td><a href="#field4" class="gradient-button edit">Изменить</a></td>
 								</tr>
 							</table>
@@ -110,7 +130,7 @@
 				<aside class="one-fourth right-sidebar">
 					<!--Need Help Booking?-->
 					<article class="widget">
-						<h4>Need Help Booking?</h4>
+						<h4>Нужны помощи с бронированием?</h4>
 						<p>Позвоните в нашу службу поддержки клиентов по указанному ниже номеру, чтобы поговорить с одним из наших консультантов, который поможет вам со всеми вашими потребностями в отпуске.</p>
 						<p class="number">{{ setting.phone }}</p>
 					</article>

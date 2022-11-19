@@ -5,10 +5,10 @@ from apps.settings.models import Setting
 # Create your views here.
 def reis(request):
     setting = Setting.objects.latest('id')
-    country = Flight.objects.all()
+    countries = Flight.objects.all()
 
     context = {
         'setting' : setting,
-        'country' : country,
+        'countries' : countries,
     }
     return render(request,'booking/flights.html',context)

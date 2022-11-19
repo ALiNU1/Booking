@@ -35,6 +35,35 @@ def register(request):
 def profile(request,id):
     setting = Setting.objects.latest('id')
     user = User.objects.get(id=id)
+    if request.method == "POST":
+        try:
+            username = request.POST.get('username')
+            email = request.POST.get('email')
+            first_name = request.POST.get('first_name')
+            last_name = request.POST.get('last_name')
+            phone = request.POST.get('phone')
+            password = request.POST.get('password')
+            user = User.objects.get(id = id)
+            if 'username1' in request.POST:
+                user.username = username
+                user.save()
+            if 'email1' in request.POST:
+                user.email = email
+                user.save()
+            if 'first_name1' in request.POST:
+                user.first_name = first_name
+                user.save()
+            if 'last_name1' in request.POST:
+                user.last_name = last_name
+            if 'phone1' in request.POST:
+                user.phone = phone
+                user.save()
+            if 'password1' in request.POST:
+                user.set_password(password)
+                user.save()
+            return redirect('profile', user.id)
+        except:
+            return HttpResponse("Error")
     context = {
         'setting' : setting,
         'user' : user,
