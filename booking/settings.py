@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'apps.places',
     'apps.countries',
     'apps.cruises',
+    'apps.cars',
 ]
 
 MIDDLEWARE = [
