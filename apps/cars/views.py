@@ -11,4 +11,4 @@ def car(request):
         'setting' : setting,
         'cars' : cars,
     }
-    return render(request,'booking/car_rental.html',context)
+    return render(request,'booking/car_rentals.html',context)

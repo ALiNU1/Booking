@@ -10,7 +10,7 @@ urlpatterns = [
     path('hotels/',include('apps.hotels.urls')),
     path('countries/',include('apps.countries.urls')),
     path('cruises/',include('apps.cruises.urls')),
-    path('cars/',include,('apps.cars.urls')),
+    path('cars/',include('apps.cars.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

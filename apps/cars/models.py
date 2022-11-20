@@ -9,7 +9,7 @@ class Car(models.Model):
 
     def __str__(self):
         return self.title
-
+    
     class Meta:
         verbose_name = 'Машина'
         verbose_name_plural = 'Машины'
