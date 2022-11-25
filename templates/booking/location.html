@@ -1,0 +1,110 @@
+﻿{% extends '../homepage.html' %}
+{% load static %}
+{% block content %}
+
+  <!--- loading animation -->
+  <div class="loading">
+    <div class="ball"></div>
+    <div class="ball1"></div>
+  </div>
+  <!--- //loading animation -->
+  
+  {% include 'include/header.html' %}
+	
+	
+	
+	<!--main-->
+	<main class="main">		
+		<div class="wrap">
+		
+			
+			
+			<div class="row">
+				<!--three-fourth content-->
+				<section class="three-fourth">
+				
+					<h1>{{ country.title }}</h1>
+					
+					<!--inner navigation-->
+					<nav class="inner-nav">
+						<ul>
+							<li><a href="#general_info" title="General information">Подробности</a></li>
+						</ul>
+					</nav>
+					<!--//inner navigation-->
+					
+					<!--General information-->
+					<section id="general_info" class="tab-content">
+						
+						<article>
+							<h2>{{ country.title }}</h2>
+							<figure><img src="{{ country.photo.url }}" alt="Things to do - London general" /></figure>
+							<p><strong>Самое посещяемое место</strong></p>
+							<p>{{ country.description }}</p>
+						
+							<table>
+								<tr>
+									<th>Суверенное государство</th>
+									<td>{{ country.sovereign_state }}</td>
+								</tr>
+								<tr>
+									<th>Страна</th>
+									<td>{{ country.country }}</td>
+								</tr>
+								<tr>
+									<th>Площадь</th>
+									<td>{{ country.area }}</td>
+								</tr>
+								<tr>
+									<th>Национальный язык</th>
+									<td>{{ country.language }}</td>
+								</tr>
+								<tr>
+									<th>Валюта</th>
+									<td>{{ country.currency }}</td>
+								</tr>
+								<tr>
+									<th>Визовые требования</th>
+									<td>{{ country.visa }}</td>
+								</tr>
+							</table>
+							<a href="https://www.aviasales.ru/?marker=15468.ydof241343903953&etext=2202.Ph9vT0QRGO8yEt8qsyMlzOc1zdaRc63nb_ZDQMScSyhiZWRsYWZ6bHRqYXJocWhx.405115287fe4bb44c89b9eb553eeb3acc8b6860d&yclid=6987160718480298788"  target="_blank" title="Book now" class="gradient-button">Полители</a>
+						</article>
+					</section>
+					<!--//General information-->
+
+					
+				</section>
+				<!--//three-fourth content-->
+				
+				<!--sidebar-->
+				<aside class="one-fourth right-sidebar">
+
+					<!--Need Help Booking?-->
+					<article class="widget">
+						<h4>Нужна помощь в бронировании?</h4>
+						<p>Позвоните в нашу службу поддержки клиентов по указанному ниже номеру, чтобы поговорить с одним из наших консультантов, который поможет вам со всеми вашими потребностями в отпуске.</p>
+						<p class="number">{{ setting.phone }}</p>
+					</article>
+					<!--//Need Help Booking?-->
+					
+					<!--Why Book with us?-->
+					<article class="widget">
+						<h4>Зачем бронировать у нас?</h4>
+						<h5>Низкие темпы</h5>
+						<p>Получите лучшие цены или получите возмещение. Никаких комиссий за бронирование. Экономить деньги!</p>
+						<h5>Самый большой выбор</h5>
+						<p>Более 140 000 отелей по всему миру 130+ авиакомпаний Более 3 миллионов отзывов гостей</p>
+						<h5>Мы всегда здесь</h5>
+						<p>Позвоните или напишите нам в любое время. Получите круглосуточную поддержку до, во время и после поездки.</p>
+					</article>
+				</aside>
+				<!--//sidebar-->
+			</div>
+			<!--//main content-->
+		</div>
+	</main>
+	<!--//main-->
+	
+	{% include 'include/footer.html' %}
+	{% endblock %}

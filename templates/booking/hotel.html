@@ -19,22 +19,24 @@
 					<!--gallery-->
 					<div class="gallery">
 						<ul id="image-gallery" class="cS-hidden">
-							<li data-thumb="{% static 'images/uploads/hotel4.jpg' %}"> 
-								<img src="images/uploads/hotel4.jpg" alt="" />
+							<li data-thumb="{{ hotel.image.url }}"> 
+								<img src="{{ hotel.image.url }}" alt="" />
 							</li>
+							{% for hotel_image in hotel_images %}
+							<li data-thumb="{{ hotel_image.image.url }}"> 
+								<img src="{{ hotel_image.image.url }}" alt="" />
+							</li>
+							{% endfor %}	
 						</ul>
 					</div>
-					<!--//gallery-->
+					<!--gallery-->
 				
 					<!--inner navigation-->
 					<nav class="inner-nav">
 						<ul>
-							<li class="availability"><a href="#availability" title="Availability">Availability</a></li>
-							<li class="description"><a href="#description" title="Description">Description</a></li>
-							<li class="facilities"><a href="#facilities" title="Facilities">Facilities</a></li>
-							<li class="location"><a href="#location" title="Location">Location</a></li>
-							<li class="reviews"><a href="#reviews" title="Reviews">Reviews</a></li>
-							<li class="things-to-do"><a href="#things-to-do" title="Things to do">Things to do</a></li>
+							<li class="availability"><a href="#availability" title="Availability">Подробности</a></li>
+							<li class="description"><a href="#description" title="Description">Описание</a></li>
+							<li class="location"><a href="#location" title="Location">Метонахождение</a></li>
 						</ul>
 					</nav>
 					<!--//inner navigation-->
@@ -51,10 +53,11 @@
 							<h2>Room types</h2>
 							<ul class="room-types">
 								<!--room-->
+								{% for motel in motels %}
 								<li>
 									<figure class="left" id="gallery1">
-										<a href="images/uploads/room1.jpg" data-sub-html="<p>Superior Double Room</p>">
-											<img src="images/uploads/room1.jpg" alt="" />
+										<a href="{{ motel.image.url }}" data-sub-html="<p>Superior Double Room</p>">
+											<img src="{{ motel.image.url }}" alt="" />
 											<span class="image-overlay"></span>
 										</a>
 										<a href="images/uploads/room2.jpg" data-sub-html="<p>Superior Double Room</p>">
@@ -62,156 +65,27 @@
 										</a>
 									</figure>
 									<div class="meta">
-										<h3>Superior Double Room</h3>
-										<p>Prices are per room20 % VAT Included in price</p>
-										<p>Non-refundableFull English breakfast $ 24.80 </p>
-										<a href="javascript:void(0)" title="more info" class="more-info">+ more info</a>
+										<h3>{{ motel.title }}</h3>
+										<p>Цены указаны за номер 20 % НДС Включено в цену</p>
+										<a href="javascript:void(0)" title="more info" class="more-info">+ узнать больше</a>
 									</div>
 									<div class="room-information">
-										<div class="row">
-											<span class="first">Max:</span>
-											<span class="second"><i class="material-icons">&#xE7FD;</i><i class="material-icons">&#xE7FD;</i></span>
-										</div>
+										
 										<div class="row">
 											<span class="first">Price:</span>
-											<span class="second">$ 55</span>
+											<span class="second">$ {{ motel.price }}</span>
 										</div>
 										<div class="row">
 											<span class="first">Rooms:</span>
-											<span class="second">01</span>
+											<span class="second">{{ motel.rooms }}</span>
 										</div>
-										<a href="booking-step1.html" class="gradient-button" title="Book">Book now</a>
+										<a href="booking-step1.html" class="gradient-button" title="Book">Хочу</a>
 									</div>
 									<div class="more-information">
-										<p>Stylish and individually designed room featuring a satellite TV, mini bar and a 24-hour room service menu.</p>
-										<p><strong>Room Facilities:</strong> Safety Deposit Box, Air Conditioning, Desk, Ironing Facilities, Seating Area, Heating, Shower, Bath, Hairdryer, Toilet, Bathroom, Pay-per-view Channels, TV, Telephone</p>
-										<p><strong>Bed Size(s):</strong> 1 Double </p>
-										<p><strong>Room Size:</strong>  16 square metres</p>
+										<p>Стильный и индивидуально оформленный номер со спутниковым телевидением, мини-баром и круглосуточным обслуживанием номеров по меню.</p>
 									</div>
 								</li>
-								<!--//room-->
-								
-								<!--room-->
-								<li>
-									<figure class="left" id="gallery2">
-										<a href="images/uploads/room2.jpg" data-sub-html="<p>Deluxe Single Room</p>">
-											<img src="images/uploads/room2.jpg" alt="" />
-											<span class="image-overlay"></span>
-										</a>
-										<a href="images/uploads/room1.jpg" data-sub-html="<p>Deluxe Single Room</p>">
-											<img src="images/uploads/room1.jpg" alt="" />
-										</a>
-									</figure>
-									<div class="meta">
-										<h3>Deluxe Single Room</h3>
-										<p>Prices are per room20 % VAT Included in price</p>
-										<p>Non-refundableFull English breakfast $ 24.80 </p>
-										<a href="javascript:void(0)" title="more info" class="more-info">+ more info</a>
-									</div>
-									<div class="room-information">
-										<div class="row">
-											<span class="first">Max:</span>
-											<span class="second"><i class="material-icons">&#xE7FD;</i></span>
-										</div>
-										<div class="row">
-											<span class="first">Price:</span>
-											<span class="second">$ 55</span>
-										</div>
-										<div class="row">
-											<span class="first">Rooms:</span>
-											<span class="second">01</span>
-										</div>
-										<a href="booking-step1.html" class="gradient-button" title="Book">Book now</a>
-									</div>
-									<div class="more-information">
-										<p>Stylish and individually designed room featuring a satellite TV, mini bar and a 24-hour room service menu.</p>
-										<p><strong>Room Facilities:</strong> Safety Deposit Box, Air Conditioning, Desk, Ironing Facilities, Seating Area, Heating, Shower, Bath, Hairdryer, Toilet, Bathroom, Pay-per-view Channels, TV, Telephone</p>
-										<p><strong>Bed Size(s):</strong> 1 Double </p>
-										<p><strong>Room Size:</strong>  16 square metres</p>
-									</div>
-								</li>
-								<!--//room-->
-								
-								<!--room-->
-								<li>
-									<figure class="left" id="gallery3">
-										<a href="images/uploads/room1.jpg" data-sub-html="<p>Standard Family Room</p>">
-											<img src="images/uploads/room1.jpg" alt="" />
-											<span class="image-overlay"></span>
-										</a>
-										<a href="images/uploads/room2.jpg" data-sub-html="<p>Standard Family Room</p>">
-											<img src="images/uploads/room2.jpg" alt="" />
-										</a>
-									</figure>
-									<div class="meta">
-										<h3>Standard Family Room</h3>
-										<p>Prices are per room20 % VAT Included in price</p>
-										<p>Non-refundableFull English breakfast $ 24.80 </p>
-										<a href="javascript:void(0)" title="more info" class="more-info">+ more info</a>
-									</div>
-									<div class="room-information">
-										<div class="row">
-											<span class="first">Max:</span>
-											<span class="second"><i class="material-icons">&#xE7FD;</i><i class="material-icons">&#xE7FD;</i><i class="material-icons">&#xE7FD;</i></span>
-										</div>
-										<div class="row">
-											<span class="first">Price:</span>
-											<span class="second">$ 55</span>
-										</div>
-										<div class="row">
-											<span class="first">Rooms:</span>
-											<span class="second">01</span>
-										</div>
-										<a href="booking-step1.html" class="gradient-button" title="Book">Book now</a>
-									</div>
-									<div class="more-information">
-										<p>Stylish and individually designed room featuring a satellite TV, mini bar and a 24-hour room service menu.</p>
-										<p><strong>Room Facilities:</strong> Safety Deposit Box, Air Conditioning, Desk, Ironing Facilities, Seating Area, Heating, Shower, Bath, Hairdryer, Toilet, Bathroom, Pay-per-view Channels, TV, Telephone</p>
-										<p><strong>Bed Size(s):</strong> 1 Double </p>
-										<p><strong>Room Size:</strong>  16 square metres</p>
-									</div>
-								</li>
-								<!--//room-->
-								
-								<!--room-->
-								<li>
-									<figure class="left" id="gallery4">
-										<a href="images/uploads/room2.jpg" data-sub-html="<p>Superior Double Room</p>">
-											<img src="images/uploads/room2.jpg" alt="" />
-											<span class="image-overlay"></span>
-										</a>
-										<a href="images/uploads/room1.jpg" data-sub-html="<p>Superior Double Room</p>">
-											<img src="images/uploads/room1.jpg" alt="" />
-										</a>
-									</figure>
-									<div class="meta">
-										<h3>Superior Double Room</h3>
-										<p>Prices are per room20 % VAT Included in price</p>
-										<p>Non-refundableFull English breakfast $ 24.80 </p>
-										<a href="javascript:void(0)" title="more info" class="more-info">+ more info</a>
-									</div>
-									<div class="room-information">
-										<div class="row">
-											<span class="first">Max:</span>
-											<span class="second"><i class="material-icons">&#xE7FD;</i><i class="material-icons">&#xE7FD;</i></span>
-										</div>
-										<div class="row">
-											<span class="first">Price:</span>
-											<span class="second">$ 55</span>
-										</div>
-										<div class="row">
-											<span class="first">Rooms:</span>
-											<span class="second">01</span>
-										</div>
-										<a href="booking-step1.html" class="gradient-button" title="Book">Book now</a>
-									</div>
-									<div class="more-information">
-										<p>Stylish and individually designed room featuring a satellite TV, mini bar and a 24-hour room service menu.</p>
-										<p><strong>Room Facilities:</strong> Safety Deposit Box, Air Conditioning, Desk, Ironing Facilities, Seating Area, Heating, Shower, Bath, Hairdryer, Toilet, Bathroom, Pay-per-view Channels, TV, Telephone</p>
-										<p><strong>Bed Size(s):</strong> 1 Double </p>
-										<p><strong>Room Size:</strong>  16 square metres</p>
-									</div>
-								</li>
+								{% endfor %}
 								<!--//room-->
 							</ul>
 						</article>
@@ -223,95 +97,58 @@
 						<article>
 							<h2>General</h2>
 							<div class="text-wrap">	
-								<p>The Best Ipsum hotel  features over 1,000 luxuriously appointed, individually styled rooms, suites and apartments, each containing unique works of art. Accommodation at the hotel includes air conditioning in all the rooms, private bathroom with heated mirrors, hair dryer, power shower, BT Openzone Wi-Fi, coffee and tea making facilities, complimentary toiletries, Egyptian linen, flat Screen LCD TV with free view, work desk, 24 hour room service.</p>
+								<p>{{ hotel.description }}</p>
 							</div>
 							
-							<h2>Check-in</h2>
+							<h2>Регистрироваться</h2>
 							<div class="text-wrap">	
-								<p>From 15:00 hours </p>
+								<p>С 15:00 часов </p>
 							</div>
 							
-							<h2>Check-out</h2>
+							<h2>Проверить</h2>
 							<div class="text-wrap">	
-								<p>Untill 12:00 hours </p>
+								<p>До 12:00 часов</p>
 							</div>
 							
-							<h2>Cancellation / Prepayment</h2>
+							<h2>Отмена / Предоплата</h2>
 							<div class="text-wrap">	
-								<p>Cancellation and prepayment policies vary according to room type. Please check the <a href="#">room conditions</a> when selecting your room. </p>
+								<p>Правила отмены бронирования и предоплаты зависят от типа номера. Пожалуйста, проверьте условия помещения при выборе номера.</p>
 							</div>
 							
-							<h2>Children and extra beds</h2>
+							<h2>Дети и дополнительные кровати</h2>
 							<div class="text-wrap">	
-								<p><strong>Free!</strong> All children under 8 years stay free of charge when using existing beds.<strong>Free!</strong> All children under 2 years stay free of charge for children’s cots/cribs.All older children or adults are charged USD 40 per person per night for extra beds.The maximum number of extra beds/children’s cots permitted in a room is 1.Any type of extra bed or child’s cot/crib is upon request and needs to be confirmed by management.Supplements are not calculated automatically in the total costs and will have to be paid for separately when checking out.</p>
+								<p><strong>Бесплатно!</strong> Все дети в возрасте до 8 лет размещаются бесплатно на имеющихся кроватях.<strong>Бесплатно!</strong> Все дети в возрасте до 2 лет размещаются бесплатно на детских кроватках/колыбелях.С детей старшего возраста или взрослых на дополнительных кроватях взимается плата в размере 40 долларов США с человека за ночь.Максимальное количество дополнительных кроватей/детских кроваток, разрешенных в номере, - 1.Любой тип Дополнительная кровать или детская кроватка/колыбель предоставляются по запросу и должны быть подтверждены администрацией. Доплата не включается автоматически в общую стоимость и оплачивается отдельно при регистрации отъезда.</p>
 							</div>
 							
-							<h2>Pets</h2>
+							<h2>Питомцы</h2>
 							<div class="text-wrap">	
-								<p>Pets are allowed. Charges may be applicable.</p>
+								<p>Домашние животные разрешены. Может взиматься дополнительная плата.</p>
 							</div>
 							
-							<h2>Accepted credit cards</h2>
+							<h2>Принимаемые кредитные карты</h2>
 							<div class="text-wrap">	
-								<p>American Express, Visa, Euro/Mastercard, Diners ClubThe hotel reserves the right to pre-authorise credit cards prior to arrival.</p>
+								<p>American Express, Visa, Euro/Mastercard, Diners Club Отель оставляет за собой право преавторизации кредитной карты до прибытия.</p>
 							</div>
 						</article>
 					</section>
 					<!--//description-->
 					
-					<!--facilities-->
-					<section id="facilities" class="tab-content">
-						<article>
-							<h2>Facilities</h2>
-							<div class="text-wrap">	
-								<ul class="three-col">
-									<li>Kitchenette</li>
-									<li>Ironing board</li>
-									<li>Catering services</li>
-									<li>Beachfront</li>
-									<li>Hotspots</li>
-									<li>Exhibition/convention floor</li>
-									<li>Restaurant</li>
-									<li>Room service - full menu</li>
-									<li>Courtyard</li>
-									<li>Lounges/bars</li>
-									<li>Laundry/Valet service</li>
-									<li>Airport Shuttle Service</li>
-									<li>Complimentary breakfast</li>
-									<li>Valet cleaning</li>
-									<li>Car hire</li>
-								</ul>
-							</div>
-							
-							<h2>Activities</h2>
-							<div class="text-wrap">	
-								<p>Tennis court, Sauna, Fitness centre, Massage </p>
-							</div>
-							
-							<h2>Internet</h2>
-							<div class="text-wrap">	
-								<p><strong>Free!</strong> WiFi is available in all areas and is free of charge. </p>
-							</div>
-							
-							<h2>Parking</h2>
-							<div class="text-wrap">	
-								<p>Private parking is possible at a location nearby (reservation is not needed) and costs USD 28.80 per day.</p>
-							</div>
-						</article>
-					</section>
-					<!--//facilities-->
+					
 					
 					<!--location-->
 					<section id="location" class="tab-content">
 						<article>
 							<!--map-->
-								<div class="gmap" id="map_canvas"></div>
+								<div class="gmap" id="map_canvas">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.5536593194793!2d72.80122972996568!3d40.538011938355226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdac011cc56779%3A0xa07af22cd6e2eb71!2zNDDCsDMyJzE4LjkiTiA3MsKwNDgnMDEuOSJF!5e0!3m2!1sru!2skg!4v1668954785121!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								</div>
+								
 							<!--//map-->
 						</article>
 					</section>
 					<!--//location-->
 					
-					<!--reviews-->
+					<!-- reviews-->
 					<section id="reviews" class="tab-content">
 						<article>
 							<h2>Hotel Score and Score Breakdown</h2>
@@ -428,7 +265,7 @@
 					</section>
 					<!--//things to do-->
 				</section>
-				<!--//hotel content-->
+				<!--//hotel content -->
 				
 				<!--sidebar-->
 				<aside class="one-fourth right-sidebar">
@@ -455,92 +292,6 @@
 						<p>Позвоните или напишите нам в любое время. Получите круглосуточную поддержку до, во время и после поездки.</p>
 					</article>
 					<!--//Why Book with us?-->
-					
-					<!--Popular hotels in the area-->
-					<article class="widget">
-						<h4>Popular hotels in the area</h4>
-						<ul class="popular-hotels small-list">
-							<li>
-								<a href="#">
-									<h3>Plaza Resort Hotel &amp; SPA
-										<span class="stars">
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-										</span>
-									</h3>
-									<p>From <span class="price">$ 100 <small>/ per night</small></span></p>
-									<span class="rating"> 8 /10</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<h3>Lorem Ipsum Inn
-										<span class="stars">
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-										</span>
-									</h3>
-									<p>From <span class="price">$ 110 <small>/ per night</small></span></p>
-									<span class="rating"> 7 /10</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<h3>Best Eastern London
-										<span class="stars">
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-										</span>
-									</h3>
-									<p>From <span class="price">$ 125 <small>/ per night</small></span></p>
-									<span class="rating"> 8 /10</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<h3>Plaza Resort Hotel &amp; SPA
-										<span class="stars">
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-											<i class="material-icons">&#xE838;</i>
-										</span>
-									</h3>
-									<p>From <span class="price">$ 100 <small>/ per night</small></span></p>
-									<span class="rating"> 8 /10</span>
-								</a>
-							</li>
-						</ul>
-						<a href="#" title="Show all" class="show-all">Show all</a>
-					</article>
-					<!--//Popular hotels in the area-->
-					
-					<!--Deal of the day-->
-					<article class="widget">
-						<h4>Deal of the day</h4>
-						<div class="deal-of-the-day">
-							<figure><a href="hotel.html"><img src="images/uploads/hotel2.jpg" alt=""  /></a></figure>
-							<h3><a href="hotel.html">Plaza Resort Hotel &amp; SPA
-								<span class="stars">
-									<i class="material-icons">&#xE838;</i>
-									<i class="material-icons">&#xE838;</i>
-									<i class="material-icons">&#xE838;</i>
-									<i class="material-icons">&#xE838;</i>
-								</span>
-							</a></h3>
-							<p>From <span class="price">$ 100 <small>/ per night</small></span></p>
-							<span class="rating"> 8 /10</span>
-						</div>
-					</article>
-					<!--//Deal of the day-->
 				</aside>
 				<!--//sidebar-->
 			</div>

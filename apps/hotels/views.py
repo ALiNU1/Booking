@@ -7,12 +7,14 @@ from django.db.models import Q
 def hotel_details(request, id):
     setting = Setting.objects.latest('id')
     hotel = Hotels.objects.get(id=id)
-    hotel_image = HotelImage.objects.all().filter(hotel = hotel)
+    motels = Hotels.objects.order_by('?')
+    hotel_images = HotelImage.objects.all().filter(hotel = hotel)
 
     context = {
         'setting' : setting,
         'hotel' : hotel,
-        'hotel_image' : hotel_image,
+        'hotel_images' : hotel_images,
+        'motels' : motels,
     }
     return render(request,'booking/hotel.html', context)
 
@@ -25,7 +27,6 @@ def hotel_search(request):
     context = {
         'setting' : setting,
         'hotels' : hotels,
-        
     }
     return render(request,"booking/search_results.html", context)
 

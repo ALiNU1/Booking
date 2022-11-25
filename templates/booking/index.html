@@ -51,7 +51,7 @@
               {% if hotel.best == False %}
               <!--column-->
               <article class="one-fourth">
-                <figure><a href="location.html" title=""><img src="{{ hotel.image.url }}" alt="" /></a></figure>
+                <figure><img src="{{ hotel.image.url }}" alt="" /></figure>
                 <div class="details">
                   <a href="{% url 'hotel_details' hotel.id  %}" title="View all" class="gradient-button">Хочу</a>
                   <h4>{{ hotel.title }}</h4>
@@ -85,7 +85,7 @@
               {% if hotel.best == True %}
               <article class="one-fourth promo">
                 <div class="ribbon-small">- {{ hotel.sale }}%</div>
-                <figure><a href="hot_deals.html" title=""><img src="{{ hotel.image.url }}" alt="" /></a></figure>
+                <figure><img src="{{ hotel.image.url }}" alt="" /></figure>
                 <div class="details">
                   <a href="{% url 'hotel_details' hotel.id  %}" title="View all" class="gradient-button">Хочу</a>
                   <h4>{{ hotel.title }}</h4>
