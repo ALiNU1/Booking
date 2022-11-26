@@ -5,6 +5,9 @@ class Car(models.Model):
     title = models.CharField(max_length=150)
     photo = models.ImageField(upload_to='cars/')
     description = models.TextField()
+    volume = models.CharField(max_length=50)
+    capacity = models.IntegerField()
+    year = models.IntegerField()
     price = models.IntegerField()
 
     def __str__(self):

@@ -1,4 +1,4 @@
-﻿{% extends '../homepage.html' %}
+{% extends '../homepage.html' %}
 {% load static %}
 {% block content %}
 	<!--- loading animation -->
@@ -19,14 +19,13 @@
 					<!--gallery-->
 					<div class="gallery">
 						<ul id="image-gallery" class="cS-hidden">
-							<li data-thumb="{{ hotel.image.url }}"> 
-								<img src="{{ hotel.image.url }}" alt="" />
+							<li data-thumb="{{ cruise.porte.url }}"> 
+								<img src="{{ cruise.poster.url }}" alt="" />
 							</li>
-							{% for hotel_image in hotel_images %}
-							<li data-thumb="{{ hotel_image.image.url }}"> 
+							
+							<!-- <li data-thumb="{{ hotel_image.image.url }}"> 
 								<img src="{{ hotel_image.image.url }}" alt="" />
-							</li>
-							{% endfor %}	
+							</li> -->
 						</ul>
 					</div>
 					<!--gallery-->
@@ -36,68 +35,16 @@
 						<ul>
 							<li class="availability"><a href="#availability" title="Availability">Подробности</a></li>
 							<li class="description"><a href="#description" title="Description">Описание</a></li>
-							<li class="location"><a href="#location" title="Location">Метонахождение</a></li>
+							
 						</ul>
 					</nav>
 					<!--//inner navigation-->
-					
-					<!--availability-->
-					<section id="availability" class="tab-content">
-						<article>
-							<h2>Availability</h2>
-							<div class="text-wrap">
-								<a href="#" class="gradient-button right" title="Change dates">Change dates</a>
-								<p>Available rooms from <span class="date">Thurs 29 Nov 2016</span> to <span class="date">Fri 30 Nov 2016</span>.</p>
-							</div>
-							
-							<h2>Room types</h2>
-							<ul class="room-types">
-								<!--room-->
-								{% for motel in motels %}
-								<li>
-									<figure class="left" id="gallery1">
-										<a href="{{ motel.image.url }}" data-sub-html="<p>Superior Double Room</p>">
-											<img src="{{ motel.image.url }}" alt="" />
-											<span class="image-overlay"></span>
-										</a>
-										<a href="images/uploads/room2.jpg" data-sub-html="<p>Superior Double Room</p>">
-											<img src="images/uploads/room2.jpg" alt="" />
-										</a>
-									</figure>
-									<div class="meta">
-										<h3>{{ motel.title }}</h3>
-										<p>Цены указаны за номер 20 % НДС Включено в цену</p>
-										<a href="javascript:void(0)" title="more info" class="more-info">+ узнать больше</a>
-									</div>
-									<div class="room-information">
-										
-										<div class="row">
-											<span class="first">Price:</span>
-											<span class="second">$ {{ motel.price }}</span>
-										</div>
-										<div class="row">
-											<span class="first">Rooms:</span>
-											<span class="second">{{ motel.rooms }}</span>
-										</div>
-										<a href="booking-step1.html" class="gradient-button" title="Book">Хочу</a>
-									</div>
-									<div class="more-information">
-										<p>Стильный и индивидуально оформленный номер со спутниковым телевидением, мини-баром и круглосуточным обслуживанием номеров по меню.</p>
-									</div>
-								</li>
-								{% endfor %}
-								<!--//room-->
-							</ul>
-						</article>
-					</section>
-					<!--//availability-->
-					
 					<!--description-->
 					<section id="description" class="tab-content">
 						<article>
 							<h2>General</h2>
 							<div class="text-wrap">	
-								<p>{{ hotel.description }}</p>
+								<p>{{ cruise.description }}</p>
 							</div>
 							
 							<h2>Регистрироваться</h2>
@@ -139,9 +86,9 @@
 					<section id="location" class="tab-content">
 						<article>
 							<!--map-->
-								<div class="gmap" id="map_canvas">
+								<!-- <div class="gmap" id="map_canvas">
 									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.5536593194793!2d72.80122972996568!3d40.538011938355226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdac011cc56779%3A0xa07af22cd6e2eb71!2zNDDCsDMyJzE4LjkiTiA3MsKwNDgnMDEuOSJF!5e0!3m2!1sru!2skg!4v1668954785121!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-								</div>
+								</div> -->
 								
 							<!--//map-->
 						</article>

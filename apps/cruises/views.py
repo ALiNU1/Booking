@@ -12,3 +12,14 @@ def cruise(request):
         'cruises' : cruises,
     }
     return render(request,'booking/cruises.html',context)
+
+def cruise_detail(request,id):
+    setting = Setting.objects.latest('id')
+    cruise = Cruises.objects.get(id=id)
+
+    context = {
+        'setting' : setting,
+        'cruise' : cruise,
+    }
+    return render(request,'booking/cruise_detail.html',context)
+    

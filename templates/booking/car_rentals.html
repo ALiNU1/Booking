@@ -47,7 +47,7 @@
 									<h3>{{ car.title }}</h3>
 									<span class="price">Цена на один день <em>$ {{ car.price }}</em> </span>
 									<span class="price">{{ car.description }}<em></em> </span>
-									<a href="hotel.html" title="Book now" class="gradient-button">Хочу</a>
+									<a href="{% url 'car_detail' car.id %}" title="Book now" class="gradient-button">Хочу</a>
 								</div>			
 							</article>
 							{% endfor %}
